@@ -94,7 +94,12 @@ class MainWindow(QMainWindow):
         self.pathDIR = pathDIR
         dirname = os.path.dirname(__file__)
         loadUi(os.path.join(dirname, "bspzipgui.ui"), self)
-        self.setWindowIcon(QtGui.QIcon(os.path.join(dirname, "BSPzipGUI.ico")))
+
+        try:
+            self.setWindowIcon(QtGui.QIcon(
+                os.path.join(dirname, "BSPzipGUI.ico")))
+        except Exception:
+            pass
 
         self.labelCREDIT.setText("BSPzipGUI 1.00 - Made by spy-ware")
         self.labelERR.setText("")
