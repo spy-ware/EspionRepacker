@@ -92,12 +92,16 @@ class MainWindow(QMainWindow):
         self.pathBSP = pathBSP
         self.pathMAP = pathMAP
         self.pathDIR = pathDIR
-        dirname = os.path.dirname(__file__)
-        loadUi(os.path.join(dirname, "bspzipgui.ui"), self)
+
+        if getattr(sys, 'frozen', False):
+            application_path = os.path.dirname(sys.executable)
+            os.chdir(application_path)
+
+        loadUi(os.path.join(application_path, "bspzipgui.ui"), self)
 
         try:
             self.setWindowIcon(QtGui.QIcon(
-                os.path.join(dirname, "BSPzipGUI.ico")))
+                os.path.join(application_path, "BSPzipGUI.ico")))
         except Exception:
             pass
 
