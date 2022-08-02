@@ -1,4 +1,5 @@
 # BSPzipGUI.py -- Made by spy-ware.
+# 1.00
 
 from PyQt5.QtWidgets import QApplication, QFileDialog, QMainWindow
 from PyQt5.uic import loadUi
