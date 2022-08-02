@@ -1,5 +1,5 @@
 # BSPzipGUI.py -- Made by spy-ware.
-# 1.00
+# 1.01
 
 from PyQt5.QtWidgets import QApplication, QFileDialog, QMainWindow
 from PyQt5.uic import loadUi
@@ -105,7 +105,7 @@ class MainWindow(QMainWindow):
         except Exception:
             pass
 
-        self.labelCREDIT.setText("BSPzipGUI 1.00 - Made by spy-ware")
+        self.labelCREDIT.setText("BSPzipGUI 1.01 - Made by spy-ware")
         self.labelERR.setText("")
         self.ButtonMAP.clicked.connect(lambda: self.browsefile(
             "Select map", self.labelMAP))
@@ -121,8 +121,6 @@ class MainWindow(QMainWindow):
         if file_name != ('', ''):
             label.setText(str(file_name[0].replace("\\", "/")))
             self.pathMAP = file_name[0]
-        else:
-            label.setText(file_name)
 
     def browsefolder(self, title, label, var):
         folder_path = QFileDialog.getExistingDirectory(self, title, "/")
@@ -133,9 +131,6 @@ class MainWindow(QMainWindow):
                 self.pathBSP = folder_path
             elif var == "d":
                 self.pathDIR = folder_path
-
-        else:
-            label.setText(folder_path)
 
     def progresslabel(self, message):
         self.labelERR.setText(message)
