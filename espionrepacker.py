@@ -1,4 +1,4 @@
-# BSPzipGUI.py -- Made by spy-ware.
+# espionrepacker.py -- Made by spy-ware.
 # 1.01
 
 from PyQt5.QtWidgets import QApplication, QFileDialog, QMainWindow
@@ -97,15 +97,15 @@ class MainWindow(QMainWindow):
             application_path = os.path.dirname(sys.executable)
             os.chdir(application_path)
 
-        loadUi(os.path.join(application_path, "bspzipgui.ui"), self)
+        loadUi(os.path.join(application_path, "espionrepacker.ui"), self)
 
         try:
             self.setWindowIcon(QtGui.QIcon(
-                os.path.join(application_path, "BSPzipGUI.ico")))
+                os.path.join(application_path, "espionrepacker.ico")))
         except Exception:
             pass
 
-        self.labelCREDIT.setText("BSPzipGUI 1.01 - Made by spy-ware")
+        self.labelCREDIT.setText("EspionRepacker 1.01 - Made by spy-ware")
         self.labelERR.setText("")
         self.ButtonMAP.clicked.connect(lambda: self.browsefile(
             "Select map", self.labelMAP))
