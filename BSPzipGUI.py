@@ -120,11 +120,11 @@ class MainWindow(QMainWindow):
         if folder_path != "":
             folder_path = folder_path.replace("\\", "/")
             label.setText(folder_path)
-            match var:
-                case "b":
-                    self.pathBSP = folder_path
-                case "d":
-                    self.pathDIR = folder_path
+            if var == "b":
+                self.pathBSP = folder_path
+            elif var == "d":
+                self.pathDIR = folder_path
+
         else:
             label.setText(folder_path)
 
